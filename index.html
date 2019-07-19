@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>output navigator members</title>
+    <style>
+      body {
+        font-family: monospace;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="js-navigator-info"></div>
+    <script>
+      (function(){
+        'use strict';
+
+        var div = document.getElementById('js-navigator-info');
+        var members = [];
+
+        for (var key in navigator) {
+          members.push(key + ': "' + navigator[key] + '"');
+        }
+
+        div.innerHTML = members.join('<br>');
+      }());
+    </script>
+  </body>
+</html>
